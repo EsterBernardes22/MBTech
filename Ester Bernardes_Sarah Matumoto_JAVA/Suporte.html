@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suporte</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f2f5;
+            color: #1a1818;
+            text-align: center;
+            background-image: url(IMG/fundo-roxo-claro6-1024x576.webp);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+
+        header {
+            background-color: #06060638; /* Purple */
+            color: #100e0ee2;
+            padding: 1em;
+        }
+
+        section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin: 20px;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(239, 237, 237, 0);
+            background-color: #fef7f700;
+        }
+
+        button {
+            background-color: #ffd700; /* Gold */
+            color: #e4b64d;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            border: 1px solid #0c0b0b;
+            border-radius: 5px;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+
+        button[type="submit"] {
+            background-color: #763de9; /* Purple */
+            color: #fff;
+            transition: background-color 0.3s ease;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #5b4acc; /* Darker Purple */
+        }
+
+        /* Form validation styles */
+        input:valid,
+        textarea:valid {
+            border-color:#DAA520;
+        }
+
+        input:invalid,
+        textarea:invalid {
+            border-color: rgb(154, 53, 232);
+        }
+
+        .error-message {
+            color: #f00;
+            font-size: 14px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Suporte ao Site</h1>
+    </header>
+    <section>
+        <h2>Entre em Contato</h2>
+        <p>Entre em contato conosco através do formulário abaixo:</p>
+        
+        <form id="contactForm" action="#" method="post">
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" placeholder="Nome" required>
+
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" name="email" placeholder="E-mail" required>
+
+            <label for="mensagem">Mensagem:</label>
+            <textarea id="mensagem" name="mensagem" placeholder="Mensagem" rows="4" required></textarea>
+
+            <button type="submit">Enviar</button>
+            <div class="error-message" id="error-message"></div>
+        </form>
+
+        <div id="confirmation" style="display: none;">
+            <p>Mensagem enviada com sucesso! Entraremos em contato em breve.</p>
+        </div>
+    </section>
+
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function (e) {
+            e.preventDefault(); // Prevent the default form submission
+            
+            var nome = document.getElementById('nome').value;
+            var email = document.getElementById('email').value;
+            var mensagem = document.getElementById('mensagem').value;
+
+            // Validate the form (add your own validation logic here)
+            if (nome === '' || email === '' || mensagem === '') {
+                document.getElementById('error-message').textContent = 'Por favor, preencha todos os campos.';
+            } else {
+                // Hide the form and display the confirmation message
+                document.getElementById('contactForm').style.display = 'none';
+                document.getElementById('confirmation').style.display = 'block';
+            }
+        });
+    </script>
+</body>
+</html>
