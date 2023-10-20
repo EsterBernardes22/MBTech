@@ -1,4 +1,4 @@
-# Site de Tecnologia - Projeto SENAI
+# Site de Tecnologia 
 
 Bem-vindo ao repositório do nosso projeto desenvolvido no âmbito do curso do SENAI, focado em Tecnologia da Informação. Este trabalho é resultado do esforço conjunto a minha dupla e destaca a aplicação prática de JavaScript para criar um portal informativo sobre as principais novidades tecnológicas da atualidade.
 
